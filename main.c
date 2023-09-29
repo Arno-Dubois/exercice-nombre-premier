@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "stdlib.h"
+#include "time.h"
 
 void nombrePremier (int n){
     int i = 2;
@@ -13,9 +15,12 @@ void nombrePremier (int n){
 }
 
 int main() {
+    srand(time(NULL));
+    int randomNumber = rand();
     int nombre;
+
     printf("Veuillez rentrer un nombre : \n");
     scanf("%d", &nombre);
-    nombrePremier(nombre);
+    nombrePremier(nombre + randomNumber);
     return 0;
 }
